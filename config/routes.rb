@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get "/" => redirect("/products/")
+  get '/', controller: :home, action: :index
 
   namespace :api do
     namespace :v1 do
