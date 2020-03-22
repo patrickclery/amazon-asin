@@ -3,8 +3,13 @@
 class FetchProductData
   class << self
     # @return {Hash} - A response containing the category, rank, and dimensions
-    # @param [AmazonAsin] - A valid ASIN object
-    def call(asin)
+    # @param [String] - ASIN
+    def call(_asin)
+
+      # Format the ASIN and validate it
+      asin = AmazonAsin.new(_asin)
+      raise "Invalid ASIN" unless asin.valid?
+
       # Fetch and extract the data
       response = Faraday.get(asin.to_url)
       extracted_data = ExtractProductData.call(response.body)
