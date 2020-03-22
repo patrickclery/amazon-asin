@@ -1,7 +1,7 @@
-[![codecov](https://codecov.io/gh/patrickclery/dry-rails-react/branch/master/graph/badge.svg)](https://codecov.io/gh/patrickclery/dry-rails-react)
-![Rails + React + PostgreSQL](https://github.com/patrickclery/dry-rails-react/workflows/Rails%20+%20React%20+%20PostgreSQL/badge.svg)
-![Dependabot Status](https://badgen.net/dependabot/patrickclery/dry-rails-react/?icon=dependabot)
-![Docker Image](https://badgen.net/docker/size/patrickclery/dry-rails-react/latest/amd64)
+[![codecov](https://codecov.io/gh/patrickclery/amazon-asin/branch/master/graph/badge.svg)](https://codecov.io/gh/patrickclery/amazon-asin)
+![Rails + React + PostgreSQL](https://github.com/patrickclery/amazon-asin/workflows/Rails%20+%20React%20+%20PostgreSQL/badge.svg)
+![Dependabot Status](https://badgen.net/dependabot/patrickclery/amazon-asin/?icon=dependabot)
+![Docker Image](https://badgen.net/docker/size/patrickclery/amazon-asin/latest/amd64)
 
 ## Description
 
