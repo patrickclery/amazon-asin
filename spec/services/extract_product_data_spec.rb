@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-RSpec.describe ExtractAmazonData, type: :service do
+RSpec.describe ExtractProductData, type: :service do
   subject { described_class.call(html) }
   # Saved an example product page in /spec/fixtures
   let(:html) { File.read(File.join(Rails.root, "/spec/fixtures/amazon-baby-banana.html")) }

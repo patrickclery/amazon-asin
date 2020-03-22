@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExtractAmazonData
+class ExtractProductData
   class << self
     # @raise Exception
     # @return {Hash} - A response containing the category, rank, and dimensions
