@@ -1,20 +1,21 @@
 # frozen_string_literal: true
 
-RSpec.describe FetchAsinData, type: :service do
+RSpec.describe FetchProductData, type: :service do
   subject { described_class.call(asin) }
 
   # Stub out live requests
   before(:each) do
-    stub_request(:get, asin.to_url)
+    stub_request(:get, "https://www.amazon.ca/dp/#{asin}")
       .to_return(body: html)
   end
 
   # Eager load these or else the stub will have a different value
-  let!(:asin) { AmazonAsin.new(Faker::Code.asin) }
+  let!(:asin) { AmazonAsin.new("B002QYW8LW") }
   # Saved an example product page in /spec/fixtures
   let!(:html) { File.read(File.join(Rails.root, "/spec/fixtures/amazon-baby-banana.html")) }
   let!(:expected_response) do
     {
+      asin:          "B002QYW8LW",
       category_name: "Baby > Health & Baby Care > Baby Grooming > Brushes & Combs",
       category_url:  "https://www.amazon.ca/b/?node=4624252011",
       rank:          "1",
