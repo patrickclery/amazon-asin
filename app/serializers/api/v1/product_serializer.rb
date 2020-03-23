@@ -9,6 +9,7 @@ module Api
       attribute :category_name
       attribute :category_url
       attribute :dimensions
+      attribute :product_title
       attribute :rank
     end
   end

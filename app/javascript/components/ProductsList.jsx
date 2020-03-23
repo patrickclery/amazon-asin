@@ -14,6 +14,7 @@ class ProductsList extends React.Component {
           <thead>
             <tr>
               <th>ASIN</th>
+              <th>Title</th>
               <th>Category</th>
               <th>Rank</th>
               <th>Dimensions</th>
@@ -24,6 +25,7 @@ class ProductsList extends React.Component {
               product =>
                 <tr key={product.id}>
                   <td>{product.attributes.asin}</td>
+                  <td>{product.attributes.productTitle}</td>
                   <td><a href={product.attributes.categoryUrl}>{product.attributes.categoryName}</a>
                   </td>
                   <td>{product.attributes.rank}</td>
