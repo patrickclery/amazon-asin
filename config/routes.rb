@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
-  get '/', controller: :home, action: :index
+  get "/", controller: :home, action: :index
 
   namespace :api do
     namespace :v1 do
@@ -9,5 +9,3 @@ Rails.application.routes.draw do
     end
   end
 end
-
-

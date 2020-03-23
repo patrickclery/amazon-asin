@@ -33,10 +33,10 @@ RSpec.describe Api::V1::ProductsController, type: :controller do
       }
     end
     # Eager load these or else the stub will have a different value
-    let!(:asin) { "B002QYW8LW" }
+    let!(:asin) { AmazonAsin.new("B002QYW8LW") }
 
     # Don't eager load these
-    subject(:request) { post :create, params: { asin: asin } }
+    subject(:request) { post :create, params: { asin: asin.to_s } }
     let(:json) { JSON.parse(request.body)["data"] }
 
     it { should be_successful }
