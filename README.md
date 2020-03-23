@@ -3,6 +3,14 @@
 ![Dependabot Status](https://badgen.net/dependabot/patrickclery/amazon-asin/?icon=dependabot)
 ![Docker Image](https://badgen.net/docker/size/patrickclery/amazon-asin/latest/amd64)
 
+## Features
+
+#### Error Message Handling
+
+If you enter an invalid ASIN, a non-existent product number, or the Product fails to save to the database, you'll see an error banner. Try it out using these ID:
+- b0gus
+- B012345678
+
 ## Description
 
 This is the opinionated Rails configuration that I use to develop full-stack Rails + React applications. As a freelance Rails developer, I need to be able to start new projects quickly that are ready for _Test-Driven Development_. I've assembled this template over the years to include best-practices, tweaks, documentation, and personal preferences, while still generally adhering to the "Rails way".
