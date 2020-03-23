@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import {Button, Form, Jumbotron} from 'react-bootstrap';
+import {Alert, Button, Form, Jumbotron} from 'react-bootstrap';
 import ProductsList from "./ProductsList";
 
 class App extends Component {
@@ -8,8 +8,9 @@ class App extends Component {
     super(props);
 
     this.state = {
-      asin:           null,
-      products:       []
+      asin:         null,
+      errorMessage: null,
+      products:     []
     };
 
     this.apiBaseUri = "/api/v1";
@@ -29,7 +30,13 @@ class App extends Component {
 
     const response = await fetch(uri, requestOptions);
     const json = await response.json();
-    this.setState({products: [...this.state.products, json.data]});
+
+    // If we get an error, display the error message
+    if (json.errors) {
+      this.setState({errorMessage: json.errors[0].detail})
+    } else {
+      this.setState({products: [json.data, ...this.state.products]});
+    }
   }
 
   handleChange(event) {
@@ -41,7 +48,13 @@ class App extends Component {
 
     const response = await fetch(uri);
     const json = await response.json();
-    this.setState({products: json.data});
+
+    // If we get an error, display the error message
+    if (json.errors) {
+      this.setState({errorMessage: json.errors[0].detail})
+    } else {
+      this.setState({products: json.data});
+    }
   }
 
   render() {
@@ -59,11 +72,19 @@ class App extends Component {
             type="text"
             placeholder="Enter an ASIN number"
             onChange={this.handleChange}
+            required
           />
           <br/>
           <Button type="submit">Submit</Button>
         </Form>
         <br/>
+
+        {this.state.errorMessage &&
+        <Alert variant="danger" onClose={() => this.setState({errorMessage: null})} dismissible>
+          <Alert.Heading>Uh-oh! Something went wrong...</Alert.Heading>
+          <p>{this.state.errorMessage}</p>
+        </Alert>}
+
         <ProductsList products={this.state.products}/>
       </div>
     );
