@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class ExtractProductData
+class ExtractDataFromHtml
   class << self
     # @raise Exception
     # @return {Hash} - A response containing the category, rank, and dimensions
@@ -9,6 +9,8 @@ class ExtractProductData
       @parser = Nokogiri.HTML(html)
 
       data                 = {}
+      data[:asin]          = extract_asin
+      data[:product_title] = extract_product_title
       data[:category_name] = extract_category_name
       data[:category_url]  = extract_category_url
       data[:dimensions]    = extract_dimensions
@@ -19,10 +21,28 @@ class ExtractProductData
 
     private
 
+    # @return [String] - ASIN Product Identifier
+    def extract_asin
+      value = @parser.xpath("//tr[td[contains(text(), 'ASIN')]]/td[@class='value']")
+                     .text
+
+      return value if value.present?
+
+      @parser.xpath("//li[b[contains(text(), 'ASIN:')]][1]")
+             .text
+             .sub("ASIN: ", "")
+             .strip
+    end
+
+    # @return [String] - Product Title
+    def extract_product_title
+      @parser.css("#productTitle").text.strip
+    end
+
     # @return [String] - Category name from breadcrumbs
     def extract_category_name
       @parser.css("#showing-breadcrumbs_div//span/a")
-             .map(&:inner_html)
+             .map(&:text)
              .map(&:strip)
              .map { |text| CGI.unescape_html(text) }
              .join(" > ")
@@ -38,16 +58,23 @@ class ExtractProductData
     # @return [String] - Rank in current category
     def extract_rank
       @parser.css("#SalesRank//span.zg_hrsr_rank")
-             .inner_html
+             .text
+             .strip
              .gsub(/#(\d)/, '\1')
     end
 
     # @return [String] - Dimensions (if available)
     def extract_dimensions
-      @parser.xpath("//tr[@class='size-weight'][td[contains(text(), 'Product Dimensions')]]/td[@class='value']")
-             .inner_html
+      value = @parser.xpath("//tr[td[contains(text(), 'Product Dimensions')]]/td[@class='value']")
+                     .text
+                     .strip
+
+      return value if value.present?
+
+      @parser.xpath("//li[b[contains(text(), 'Product Dimensions:')]][1]")
+             .text
+             .sub("Product Dimensions: ", "")
              .strip
-             .then { |str| CGI.unescape_html(str) }
     end
   end
 end

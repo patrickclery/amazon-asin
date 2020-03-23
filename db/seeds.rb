@@ -6,8 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Product.create(asin: "B002QYW8LW",
+Product.create asin:          "B002QYW8LW",
                category_name: "Baby > Health & Baby Care > Baby Grooming > Brushes & Combs",
-               category_url: "https://www.amazon.ca/b/?node=4624252011",
-               rank: "118",
-               dimensions: "4.3 x 0.4 x 7.9 inches")
+               category_url:  "https://www.amazon.ca/b/?node=4624252011",
+               rank:          "118",
+               dimensions:    "11 x 1 x 20 cm"
+
+Product.create asin:          "B07HCQV1BT",
+               category_name: "Electronics > Televisions & Video > Televisions",
+               category_url:  "https://www.amazon.ca/b/?node=2690978011",
+               rank:          "142",
+               dimensions:    ""
+
+Product.create asin:          "B07H4MPJ5X",
+               category_name: "Video Games > Xbox One > Accessories > Controllers",
+               category_url:  "https://www.amazon.ca/b/?node=6920179011",
+               rank:          "17",
+               dimensions:    "16.5 x 13.5 x 3.8 cm ; 177 g"
