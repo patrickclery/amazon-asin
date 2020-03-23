@@ -9,17 +9,20 @@
 Product.create asin:          "B002QYW8LW",
                category_name: "Baby > Health & Baby Care > Baby Grooming > Brushes & Combs",
                category_url:  "https://www.amazon.ca/b/?node=4624252011",
-               rank:          "118",
-               dimensions:    "11 x 1 x 20 cm"
+               dimensions:    "11 x 1 x 20 cm",
+               product_title: "Baby Banana Bendable Training Toothbrush (Infant)",
+               rank:          "118"
 
 Product.create asin:          "B07HCQV1BT",
                category_name: "Electronics > Televisions & Video > Televisions",
                category_url:  "https://www.amazon.ca/b/?node=2690978011",
-               rank:          "142",
-               dimensions:    ""
+               dimensions:    "",
+               product_title: "Toshiba 49LF421C19 49-inch 1080p HD Smart LED TV - Fire TV Edition",
+               rank:          "142"
 
 Product.create asin:          "B07H4MPJ5X",
                category_name: "Video Games > Xbox One > Accessories > Controllers",
                category_url:  "https://www.amazon.ca/b/?node=6920179011",
-               rank:          "17",
-               dimensions:    "16.5 x 13.5 x 3.8 cm ; 177 g"
+               dimensions:    "16.5 x 13.5 x 3.8 cm ; 177 g",
+               product_title: "Collective Minds Xbox One Mod Pack - Xbox One",
+               rank:          "17"

@@ -41,6 +41,7 @@ ActiveRecord::Schema.define(version: 2020_03_22_150110) do
     t.string "category_name"
     t.string "category_url"
     t.string "dimensions"
+    t.string "product_title"
     t.string "rank"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
