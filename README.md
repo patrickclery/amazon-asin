@@ -1,7 +1,9 @@
-[![codecov](https://codecov.io/gh/patrickclery/amazon-asin/branch/master/graph/badge.svg)](https://codecov.io/gh/patrickclery/amazon-asin)
-![Rails + React + PostgreSQL](https://github.com/patrickclery/amazon-asin/workflows/Rails%20+%20React%20+%20PostgreSQL/badge.svg)
-![Dependabot Status](https://badgen.net/dependabot/patrickclery/amazon-asin/?icon=dependabot)
-![Docker Image](https://badgen.net/docker/size/patrickclery/amazon-asin/latest/amd64)
+[![RSpec tests](https://github.com/patrickclery/amazon-asin/workflows/Rails%20+%20React%20+%20PostgreSQL/badge.svg)](https://github.com/patrickclery/amazon-asin/actions?query=workflow%3A%22Rails+%2B+React+%2B+PostgreSQL%22)
+[![Docker Image](https://badgen.net/docker/size/patrickclery/amazon-asin/latest/amd64)](https://hub.docker.com/repository/docker/patrickclery/amazon-asin)
+
+# Amazon ASIN Lookup
+
+![Screenshot](/app/assets/images/screenshot.jpg)
 
 ## Getting Started
 

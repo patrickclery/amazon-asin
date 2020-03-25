@@ -10,6 +10,9 @@ module Api
       attribute :category_url
       attribute :dimensions
       attribute :product_title
+      attribute :product_url do |product|
+        "https://www.amazon.ca/dp/#{product.asin}"
+      end
       attribute :rank
     end
   end

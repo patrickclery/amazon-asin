@@ -10,7 +10,7 @@ class ProductsList extends React.Component {
     return (
       <React.Fragment>
         <h1>Products</h1>
-        <Table>
+        <Table striped>
           <thead>
             <tr>
               <th>ASIN</th>
@@ -24,7 +24,7 @@ class ProductsList extends React.Component {
             {this.props.products && this.props.products.map(
               product =>
                 <tr key={product.id}>
-                  <td>{product.attributes.asin}</td>
+                  <td><a href={product.attributes.productUrl} target="_blank">{product.attributes.asin}</a></td>
                   <td>{product.attributes.productTitle}</td>
                   <td><a href={product.attributes.categoryUrl}>{product.attributes.categoryName}</a>
                   </td>

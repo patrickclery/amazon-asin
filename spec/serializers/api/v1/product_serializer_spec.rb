@@ -17,12 +17,13 @@ RSpec.describe Api::V1::ProductSerializer, type: :serializer do
 
   describe "attributes" do
     subject { json["attributes"] }
-    it { expect(subject.keys).to contain_exactly("asin", "categoryName", "categoryUrl", "dimensions", "productTitle", "rank") }
+    it { expect(subject.keys).to contain_exactly("asin", "categoryName", "categoryUrl", "dimensions", "productTitle", "productUrl", "rank") }
     it { expect(subject["asin"]).to eq "B002QYW8LW" }
     it { expect(subject["categoryName"]).to eq "Baby > Health & Baby Care > Baby Grooming > Brushes & Combs" }
     it { expect(subject["categoryUrl"]).to eq "https://www.amazon.ca/b/?node=4624252011" }
     it { expect(subject["rank"]).to eq "1" }
     it { expect(subject["productTitle"]).to eq "Baby Banana Bendable Training Toothbrush (Infant)" }
+    it { expect(subject["productUrl"]).to eq "https://www.amazon.ca/dp/B002QYW8LW" }
     it { expect(subject["dimensions"]).to eq "11 x 1 x 20 cm" }
   end
 
