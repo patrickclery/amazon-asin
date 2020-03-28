@@ -24,7 +24,7 @@ RUN mkdir -p /app
 WORKDIR /app
 
 # Install bundler then all gems
-COPY Gemfile Gemfile.lock ./
+COPY ./Gemfile ./Gemfile.lock /app/
 RUN gem install bundler
 RUN bundle update --bundler
 RUN bundle install
