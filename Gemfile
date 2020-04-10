@@ -2,10 +2,13 @@
 
 source "https://rubygems.org"
 
+ruby "~> 2.6.6"
+
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap"
 gem "brakeman"
 gem "faraday"
+gem "json", "~> 2.3.0"
 gem "fast_jsonapi"
 gem "nokogiri"
 gem "pg"
@@ -13,7 +16,7 @@ gem "puma"
 gem "rails", "~> 6.0.2.2"
 gem "react-rails"
 gem "turbolinks"
-gem "webpacker", "~> 4.x"
+gem "webpacker", "~> 5.x"
 
 group :development do
   gem "better_errors"
@@ -34,7 +37,7 @@ group :test do
   gem "faker"
   gem "rspec"
   gem "rspec-core"
-  gem "rspec-rails", "~> 4.0.0.rc1" # Needed for react-rails controller tests
+  gem "rspec-rails", "~> 4.0.0" # Needed for react-rails controller tests
   gem "rails-controller-testing"
   gem "rubocop"
   gem "rubocop-rspec"
