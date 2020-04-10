@@ -12,6 +12,6 @@ jobs:
       - name: Publish Docker Image
         uses: elgohr/Publish-Docker-Github-Action@2.14
         with:
-          name: patrickclery/amazon-asin-checker
+          name: patrickclery/amazon-asin
           username: ${{ secrets.DOCKER_USERNAME }}
           password: ${{ secrets.DOCKER_PASSWORD }}
