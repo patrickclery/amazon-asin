@@ -63,7 +63,7 @@ class App extends Component {
 
         <Jumbotron>
           <h1>Amazon ASIN Lookup</h1>
-          <p>Made by <a href="https://github.com/patrickclery">Patrick Clery</a> for JungleScout</p>
+          <p>Made by <a href="https://github.com/patrickclery">Patrick Clery</a></p>
         </Jumbotron>
 
         <Form onSubmit={this.handleSubmit}>
